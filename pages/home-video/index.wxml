@@ -1,0 +1,10 @@
+<!--pages/home-video/index.wxml-->
+<view class="video">
+  <view class="item" wx:for="{{topMVs}}" wx:key="id">
+  <!-- item绑定必须用mustach语法，data-items 是htnl自带的属性，可以获取当前具体的元素 -->
+    <video-item-v1 item="{{item}}"
+                   bindtap="handleVideoItemClick"
+                   data-item="{{item}}">
+    </video-item-v1>
+  </view>
+</view>

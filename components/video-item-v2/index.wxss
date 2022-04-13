@@ -1,0 +1,34 @@
+/* components/video-item-v2/index.wxss */
+.video {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.video .left, .video .right {
+  width: 50%;
+}
+
+.video .left {
+  border-radius: 12rpx;
+}
+
+.video .left .image {
+  width: 300rpx;
+  height: 100%;
+  border-radius: 12rpx;
+}
+
+.video .right {
+  text-align: left;
+}
+
+.video .right .title {
+  font-size: 28rpx;
+}
+
+.video .right .user-name {
+  font-size: 24rpx;
+  color: #999;
+ }

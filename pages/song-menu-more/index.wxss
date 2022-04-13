@@ -1,0 +1,58 @@
+/* pages/song-menu-more/index.wxss */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+
+.menu-item {
+  display: inline-block;
+  vertical-align: top; /** 解决部分机型的适配 */
+  width: 340rpx;
+}
+
+.item {
+  display: inline-block;
+  width: 100%;
+}
+
+.top {
+  position: relative;
+}
+
+.top .image {
+  width: 100%;
+  border-radius: 12rpx;
+  background-size: cover;
+}
+
+.top .play-counter {
+  position: absolute;
+  right: 0;
+  bottom: 10rpx;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 12rpx;
+  padding: 6rpx 10rpx;
+  background: rgba(0, 0, 0, .5);
+}
+
+.item .bottom {
+  width: 100%;
+  font-size: 26rpx;
+
+  /* 显示4行 */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 4;
+  -moz-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+

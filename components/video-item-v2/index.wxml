@@ -1,0 +1,12 @@
+<!--components/video-item-v2/index.wxml-->
+<view class="video" 
+      bindtap="handleVideoInfo"
+      data-item="{{ item }}">
+  <view class="left">
+    <image class="image" mode="widthFix" src="{{ item.cover }}"></image>
+  </view>
+  <view class="right">
+    <view class="title">{{ item.name }}</view>
+    <view class="user-name">{{ item.artistName }}</view>
+  </view>
+</view>

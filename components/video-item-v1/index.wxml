@@ -1,0 +1,17 @@
+<!--components/video-item-v1/index.wxml-->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+<view class="item">
+<!-- 专辑 -->
+  <view class="album">
+  <!-- image标签自带的mode属性设置widthFix可自适应高度 -->
+    <image class="image" src="{{item.cover}}" mode="widthFix"></image>
+    <view class="info">
+      <view class="count">{{format.formatCount(item.playCount)}}</view>
+      <view class="duration">{{format.formatCount(item.mv.videos[0].duration)}}</view>
+    </view>
+  </view>
+  <!-- 歌曲名和作者 -->
+  <view class="content">
+    {{item.name}}--{{item.artistName}}
+  </view>
+</view>

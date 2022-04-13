@@ -1,0 +1,40 @@
+/* baseui/nav-bar/index.wxss */
+.nav-bar {
+  display: flex;
+  text-align: center;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+}
+
+.left-arrow {
+  display: none;
+}
+/** 当左边插槽为空的时候显示默认插槽 */
+.left-slot:empty + .left-arrow {
+  display: block;
+}
+
+.center-title {
+  display: none;
+}
+/** 当中间插槽为空的时候显示默认插槽 */
+.center-slot:empty + .center-title {
+  display: block;
+}
+
+.left .left-arrow .icon {
+  width: 44rpx;
+  display: block;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;/** 填满剩余宽度 */
+}

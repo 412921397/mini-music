@@ -1,0 +1,34 @@
+/** 专辑播放量 */
+function formatCount(count) {
+  var couter = parseFloat(count)
+  if(couter > 100000000) {
+    return (couter / 100000000).toFixed(1) + "亿"
+  } else if (couter > 10000) {
+    return (couter / 10000).toFixed(1) + "万"
+  } else {
+    return couter + ""
+  }
+}
+
+/** 截取数字 */
+function padLeftZero(time) {
+  time = time + ""
+  return ("00" + time).slice(time.length)
+}
+/** 格式化时间 */
+function formatDuration(duration) {
+  /** 当前总共的时间 */
+  duration = duration / 1000
+  /** 需要展示的分钟 */
+  var minute = Math.floor(duration / 60)
+  /** 秒 */
+  var second = Math.floor(duration) % 60
+
+  return padLeftZero(minute) + ":" + padLeftZero(second)
+}
+
+/** 小程序必须用commonjs导出 */
+module.exports = {
+  formatCount: formatCount,
+  formatDuration: formatDuration
+}

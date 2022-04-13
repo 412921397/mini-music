@@ -1,0 +1,41 @@
+/* pages/detail-video/index.wxss */
+page {
+  padding-top: 225px; /** 原生video标签的高度 */
+}
+
+.video {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999999;
+}
+
+.scrollBody {
+  height: calc(100% - 225px);
+}
+
+.videoInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20rpx;
+  height: 200rpx;
+  line-height: 70rpx;
+}
+
+.videoInfo .video-title {
+  font-size: 32rpx;
+  color: #555;
+}
+
+.videoInfo .video-name, .videoInfo .video-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.video-more {
+  padding: 0 20rpx;
+}
+
+.video-more .info {
+  margin: 20rpx 0;
+}
