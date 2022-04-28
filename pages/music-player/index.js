@@ -39,7 +39,7 @@ Page({
   onLoad: function (options) {
     /** 获取传入的id */
     const id = options.id
-    console.log(id)
+    // console.log(id)
     this.setData({ id })
     /** 获取歌曲信息 */
     this.setupPlayerStoreListener()

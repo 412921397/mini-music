@@ -2,14 +2,16 @@
 page {
   padding: 0 20rpx;
   padding-top: 56px;
+  position: relative;
 }
 
 /** 搜索框 */
 .search {
   position: fixed;
-  top: 0;
-  left: 20rpx;
+  top: -1rpx;
+  left: 19rpx;
   right: 20rpx;
+  z-index: 999999;
 }
 
 /* 热门搜索 */
@@ -65,4 +67,12 @@ page {
 .result .title {
   font-size: 32rpx;
   color: #26ce8a;
+}
+
+/** */
+.van-tabs__scroll {
+  background-color: #fafafa !important;
+}
+.van-tabs__line {
+  background-color: #26ce8a !important;
 }

@@ -5,12 +5,13 @@
   value="{{searchValue}}"
   background="#fafafa"
   shape="round"
+  placeholder="请搜索歌曲/歌手/歌单/视频"
   show-action="{{searchValue}}"
   bind:change="handleSearchChange"
   bind:search="handleSearchAction"
 ></van-search>
 <!-- 热门搜索 -->
-<view class="hot" wx:if="{{!searchValue.length && !suggestSongs.length}}">
+<view class="hot" wx:if="{{!searchValue.length && !suggestSongs.length && !resultMvs.length}}">
   <area-header title="热门搜索" showRight="{{fasle}}"></area-header>
   <view class="list">
     <block wx:for="{{hotKeywords}}" wx:key="first">
@@ -23,7 +24,7 @@
   </view>
 </view>
 <!-- 建议搜索 -->
-<view class="suggest" wx:elif="{{suggestSongs.length && !resultSongs.length}}">
+<view class="suggest" wx:elif="{{suggestSongs.length && !resultSongs.length && !resultSonsMenu.length && !resultMvs.length}}">
   <view class="title">搜索"{{searchValue}}"</view>
   <view class="list">
     <block wx:for="{{suggestSongs}}" wx:key="keyword">
@@ -36,11 +37,22 @@
   </view>
 </view>
 <!-- 搜索结果 -->
-<view class="result" wx:elif="{{resultSongs.length}}">
-  <view class="title">最佳匹配</view>
-  <view class="list">
-    <block wx:for="{{resultSongs}}" wx:key="id">
-      <song-item-v2 item="{{item}}" index="{{index+1}}"></song-item-v2>
-    </block>
-  </view>
+<view class="result" 
+      wx:elif="{{ resultSongs.length || resultSonsMenu.length || resultMvs.length }}">
+  <van-tabs active="{{ active }}" sticky="{{scrollTop > 0}}" z-index="{{9999}}" bind:click="handleDetails">
+    <van-tab title="歌曲">
+      <view class="title">最佳匹配</view>
+      <view class="list">
+        <block wx:for="{{resultSongs}}" wx:key="id">
+          <song-item-v2 item="{{item}}" index="{{index+1}}"></song-item-v2>
+        </block>
+      </view>
+    </van-tab>
+    <van-tab title="歌单">
+      <song-search-item result="{{resultSonsMenu}}"></song-search-item>
+    </van-tab>
+    <van-tab title="视频">
+      <video-item-play result="{{resultMvs}}"></video-item-play>
+    </van-tab>
+  </van-tabs>
 </view>

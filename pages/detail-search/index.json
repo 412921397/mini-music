@@ -2,6 +2,10 @@
   "usingComponents": {
     "van-search": "@vant/weapp/search/index",
     "area-header": "/components/area-header/index",
-    "song-item-v2": "/components/song-item-v2/index"
+    "song-item-v2": "/components/song-item-v2/index",
+    "song-search-item": "/components/song-search-item/index",
+    "video-item-play": "/components/video-item-play/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
   }
 }

@@ -138,7 +138,7 @@ const playerStore = new HYEventStore({
         case 0: // 顺序播放
           index = isNext ? index + 1 : index - 1
           if(index === -1) index = ctx.playListSongs.length - 1
-          if(index === ctx.playListSongs.length) index === 0
+          if(index === ctx.playListSongs.length) index = 0
           break
         case 1: // 单曲循环
           break
@@ -146,7 +146,7 @@ const playerStore = new HYEventStore({
           index = Math.floor(Math.random() * ctx.playListSongs.length)
           break
       }
-      console.log(index)
+      // console.log(index)
       /** 获取歌曲 */
       let currentSong = ctx.playListSongs[index]
       if(!currentSong) {

@@ -7,7 +7,7 @@
     <image class="image" src="{{item.cover}}" mode="widthFix"></image>
     <view class="info">
       <view class="count">{{format.formatCount(item.playCount)}}</view>
-      <view class="duration">{{format.formatCount(item.mv.videos[0].duration)}}</view>
+      <view class="duration">{{format.formatDuration(item.mv.videos[0].duration)}}</view>
     </view>
   </view>
   <!-- 歌曲名和作者 -->

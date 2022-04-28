@@ -19,7 +19,7 @@ page {
   flex-direction: column;
   padding: 0 20rpx;
   height: 200rpx;
-  line-height: 70rpx;
+  line-height: 45rpx;
 }
 
 .videoInfo .video-title {

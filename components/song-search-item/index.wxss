@@ -1,0 +1,38 @@
+/* components/song-video-item/index.wxss */
+.songsMenuBox {
+  display: flex;
+  padding: 16rpx 0;
+  align-items: center;
+}
+
+.songsMenuBox .image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 16rpx;
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+  padding-left: 40rpx;
+}
+
+.content .name {
+  font-size: 32rpx;
+  color: #555;
+}
+
+.content .info {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.content .info .text {
+  padding-right: 20rpx;
+}
+
+.arrow .icon {
+  width: 50rpx;
+  height: 50rpx;
+}

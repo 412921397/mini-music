@@ -104,7 +104,7 @@ Page({
       /** 获取图片容器的高度 */
       throttleQueryRect(".swiper-image").then(res => {
         const rect = res[0]
-        this.setData({ swiperHeight: rect.height })
+        if(rect) this.setData({ swiperHeight: rect.height })
       })
     },
     /** 更多跳转 */

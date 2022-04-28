@@ -12,8 +12,9 @@ export function getSearchSuggest(keywords) {
   })
 }
 /** 搜索  */
-export function getSearchResult(keywords) {
+export function getSearchResult(keywords, type = 1) {
   return qlRequest.get("/search", {
-    keywords
+    keywords,
+    type
   })
 }

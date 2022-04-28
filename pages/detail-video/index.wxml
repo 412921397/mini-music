@@ -5,6 +5,17 @@
        src="{{mvURLInfo.url}}"
        danmu-list="{{danmuList}}"
        referrer-policy="origin"
+       danmu-btn
+       show-center-play-btn
+       show-snapshot-button
+       show-mute-btn
+       show-casting-button="{{true}}"
+       enable-progress-gesture
+       play-btn-position="{{center}}"
+       enable-play-gesture
+       object-fit="cover"
+       picture-in-picture-mode="{{['push', 'pop']}}"
+       title="{{mvDetail.name}}"
        autoplay>
 </video>
 <scroll-view scroll-y class="scrollBody">

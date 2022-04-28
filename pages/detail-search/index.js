@@ -4,6 +4,7 @@ import debounce from "../../utils/debounce"
 import stringToNodes from "../../utils/string2nodes"
 
 const debounceGetSearchSuggest = debounce(getSearchSuggest, 300)
+const globalData = getApp().globaldata
 
 Page({
 
@@ -15,7 +16,12 @@ Page({
     suggestSongs: [],
     suggestSongsNodes: [],
     resultSongs: [],
-    searchValue: ""
+    resultSonsMenu: [],
+    resultMvs: [],
+    searchValue: "",
+    active: 0,
+    statusBarHeight: globalData.statusBarHeight,
+    scrollTop: 0
   },
 
   /**
@@ -24,6 +30,7 @@ Page({
   onLoad: function (options) {
     /** 获取页面的数据 */
     this.getPageData()
+    // console.log(this.data.statusBarHeight, "sss")
   },
   getPageData() {
     getSearchHot().then(res => {
@@ -37,7 +44,13 @@ Page({
     this.setData({ searchValue })
     /** 判断关键字为空字符串的处理逻辑 */
     if(!searchValue.length) {
-      this.setData({ suggestSongs: [], resultSongs: [] })
+      this.setData({ 
+        suggestSongs: [],
+        resultSongs: [],
+        resultSonsMenu: [],
+        resultMvs: [],
+        active: 0
+      })
       /** 输入框为空的时候不请求api */
       debounceGetSearchSuggest.cancel()
       return
@@ -58,11 +71,17 @@ Page({
       this.setData({ suggestSongsNodes })
     })
   },
-  /** 搜索接口 */
+  /** 搜索歌曲歌手 */
   handleSearchAction() {
     const searchValue = this.data.searchValue
-    getSearchResult(searchValue).then(res => {
-      this.setData({ resultSongs: res.result.songs })
+    let type
+    this.data.active === 0 ? type = 1: this.data.active === 1 ? type = 1000 : type = 1004
+    getSearchResult(searchValue, type).then(res => {
+      this.setData({ 
+        resultSongs: res.result.songs ? res.result.songs : [],
+        resultSonsMenu:  res.result.playlists ? res.result.playlists : [],
+        resultMvs: res.result.mvs ? res.result.mvs : []
+      })
     })
   },
   /** */
@@ -71,6 +90,12 @@ Page({
     const keyword = event.currentTarget.dataset.keyword
     /** 将关键字设置到searchValue */
     this.setData({ searchValue: keyword })
+    /** 发送请求 */
+    this.handleSearchAction()
+  },
+  handleDetails(event) {
+    // console.log(event)
+    this.setData({ active: event.detail.index })
     /** 发送请求 */
     this.handleSearchAction()
   },

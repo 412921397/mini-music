@@ -1,0 +1,20 @@
+<!--components/song-video-item/index.wxml-->
+<wxs src="../../utils/format.wxs" module="format"></wxs>
+  <view class="songsMenuBox"
+        wx:for="{{result}}"
+        wx:key="id"
+        bindtap="handleDetails"
+        data-item="{{item}}">
+    <image class="image" src="{{item.coverImgUrl}}"></image>
+    <view class="content">
+      <text class="name">{{item.name}}</text>
+      <view class="info">
+        <text class="text">{{item.trackCount}}首</text>
+        <text class="text">{{item.creator.nickname}}</text>
+        <text class="text">{{format.formatCount(item.playCount)}}</text>
+      </view>
+    </view>
+    <view class="arrow">
+      <image class="icon" src="/assets/images/icons/arrow-right.png"></image>
+    </view>
+</view>
