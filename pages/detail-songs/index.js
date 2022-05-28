@@ -25,6 +25,7 @@ Page({
         this.setData({ songInfo: res.playlist })
       })
     } else if(type === "rank") {
+      console.log(options)
       const ranking = options.ranking
       this.setData({ ranking })
       /** 获取数据 */

@@ -1,4 +1,4 @@
-const BASE_URL = "http://123.207.32.32:9001"
+const BASE_URL = "https://coderwhy-music.vercel.app"
 
 /** 已经部署好的登录api */
 const LOGIN_BASE_URL = "http://123.207.32.32:3000"

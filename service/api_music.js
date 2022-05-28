@@ -11,9 +11,9 @@ export function getBanners() {
  * 
  * @param {number} idx 获取热门
  */
-export function getRankings(idx) {
-  return qlRequest.get("/top/list", {
-    idx
+export function getRankings(id) {
+  return qlRequest.get("/playlist/detail", {
+    id
   })
 }
 

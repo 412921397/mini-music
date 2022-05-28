@@ -114,7 +114,10 @@ Page({
     /** 巅峰榜歌单跳转 */
     handleRankingItemClick(event) {
       const idx = event.currentTarget.dataset.idx
-      const rankingName = rankingMap[idx]
+      /** 3779629: 新歌榜 3778678: 热门榜 2884035: 原创榜 19723756: 飙升榜 */
+      const id = {0: 3779629, 2: 2884035, 3:19723756}
+      const index = id[idx]
+      const rankingName = rankingMap[index]
       this.navigateToDetailSongsPage(rankingName)
     },
     /** 封装的跳转 */
